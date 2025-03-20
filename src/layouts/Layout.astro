@@ -9,10 +9,24 @@ const {title = "Julio Oñate - Portfolio"} = Astro.props
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<script is:inline>
+			const toggleTheme = () => {document.documentElement.classList.toggle(
+			"dark",
+			localStorage.theme === "dark" ||
+				(!("theme" in localStorage) &&
+				window.matchMedia("(prefers-color-scheme: dark)").matches)
+			);}
+			toggleTheme();
+
+			/* Listen to system color preference changes */
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", e => {
+				toggleTheme();
+			})
+		</script>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="text-dark dark:text-light bg-light dark:bg-dark">
 		<slot />
 	</body>
 </html>

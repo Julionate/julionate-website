@@ -2,6 +2,8 @@
 @import "tailwindcss-animated";
 @plugin "@tailwindcss/typography";
 
+@custom-variant dark (&:where([class=dark], [class=dark] *));
+
 @theme {
   --color-primary: hsl(338, 100%, 50%);
   --color-secondary: hsl(193, 100%, 52%);
