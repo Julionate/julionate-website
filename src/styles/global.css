@@ -2,9 +2,19 @@
 @import "tailwindcss-animated";
 @plugin "@tailwindcss/typography";
 
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik.woff2") format("woff2");
+}
+
 @custom-variant dark (&:where([class=dark], [class=dark] *));
 
 @theme {
+  /* Font Customization */
+  --font-sans: "Rubik";
+
+  /* Color Palette */
+
   --color-primary: hsl(338, 100%, 50%);
   --color-secondary: hsl(193, 100%, 52%);
   --color-light: hsl(202, 24%, 93%);
