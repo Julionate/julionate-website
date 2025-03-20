@@ -1,0 +1,12 @@
+---
+const links = [{Label: "Presentation", Url: "#Presentation"}, {Label: "Projects", "Url": "#Projects"}, {Label: "Contact", Url: "#Contact"}]
+---
+
+<main class="w-screen h-12 shadow-md flex justify-center items-center text-sm sm:text-base md:text-lg lg:text-xl px-6">
+    <ul class="font-normal flex *:not-last:after:content-['・'] ml-auto">
+        {links.map(({Label, Url}) => 
+            <li><a href={Url} class="inline-block hover:text-secondary hover:-translate-y-0.5 transition-all">{Label}</a></li>
+        )}
+    </ul>
+    <button class="ml-auto">Theme</button>
+</main>
