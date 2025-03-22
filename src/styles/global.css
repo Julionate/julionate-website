@@ -22,7 +22,6 @@
   name: "dark";
   default: false;
   colors-scheme: dark;
-  prefersdark: true;
   --color-primary: hsl(338, 100%, 50%);
   --color-secondary: hsl(193, 100%, 52%);
 }
