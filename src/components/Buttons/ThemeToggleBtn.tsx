@@ -1,6 +1,10 @@
 import { useSignal, useSignalEffect } from "@preact/signals";
+import { languages } from "../../i18n/ui";
+import { useTranslations } from "../../i18n/utils";
 
-export const ThemeToggleBtn = () => {
+export const ThemeToggleBtn = ({ lang }: { lang: keyof typeof languages }) => {
+  const t = useTranslations(lang);
+
   enum Themes {
     system = "system",
     light = "light",
@@ -44,8 +48,7 @@ export const ThemeToggleBtn = () => {
         role="button"
         class="btn btn-block font-medium rounded-lg"
       >
-        {currentTheme.value.charAt(0).toUpperCase() +
-          currentTheme.value.slice(1)}
+        {t(`theme.${currentTheme.value}`)}
         <svg
           width="12px"
           height="12px"
@@ -66,7 +69,7 @@ export const ThemeToggleBtn = () => {
             type="radio"
             name="theme-dropdown"
             className="theme-controller btn btn-block btn-ghost justify-start"
-            aria-label="Light"
+            aria-label={t("theme.light")}
             value="default"
           />
         </li>
@@ -76,7 +79,7 @@ export const ThemeToggleBtn = () => {
             type="radio"
             name="theme-dropdown"
             className="theme-controller btn btn-block btn-ghost justify-start"
-            aria-label="Dark"
+            aria-label={t("theme.dark")}
             value="dark"
           />
         </li>
@@ -86,7 +89,7 @@ export const ThemeToggleBtn = () => {
             type="radio"
             name="theme-dropdown"
             className="theme-controller btn btn-block btn-ghost justify-start"
-            aria-label="System"
+            aria-label={t("theme.system")}
             value="system"
           />
         </li>

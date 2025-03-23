@@ -1,6 +1,9 @@
 ---
-const links = [{Label: "Presentation", Url: "#Presentation"}, {Label: "Projects", "Url": "#Projects"}, {Label: "Contact", Url: "#Contact"}]
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
 import { ThemeToggleBtn } from "./Buttons/ThemeToggleBtn"
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const links = [{Label: t("nav.presentation"), Url: `#${t("nav.presentation")}`}, {Label: t("nav.projects"), "Url": `#${t("nav.projects")}`}, {Label: t("nav.contact"), Url: `#${t("nav.contact")}`}]
 ---
 
 <header class="w-screen h-12 shadow-md flex justify-center items-center text-sm sm:text-base md:text-lg lg:text-xl px-6">
@@ -9,5 +12,5 @@ import { ThemeToggleBtn } from "./Buttons/ThemeToggleBtn"
             <li><a href={Url} class="inline-block hover:text-secondary hover:-translate-y-0.5 transition-all">{Label}</a></li>
         )}
     </ul>
-    <ThemeToggleBtn client:only="Preact"/>
+    <ThemeToggleBtn client:only="Preact" lang={lang}/>
 </header>
