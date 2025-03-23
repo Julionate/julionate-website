@@ -4,11 +4,17 @@
 
 /* Import DaisyUI and imports Light and Dark themes only */
 
-@plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
-}
+@plugin "daisyui";
 
 /* Customizing DaisyUI Themes */
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  colors-scheme: dark;
+  prefersdark: true;
+  --color-primary: hsl(338, 100%, 50%);
+  --color-secondary: hsl(193, 100%, 52%);
+}
 
 @plugin "daisyui/theme" {
   name: "light";
@@ -18,20 +24,12 @@
   --color-secondary: hsl(193, 100%, 52%);
 }
 
-@plugin "daisyui/theme" {
-  name: "dark";
-  default: false;
-  colors-scheme: dark;
-  --color-primary: hsl(338, 100%, 50%);
-  --color-secondary: hsl(193, 100%, 52%);
-}
+/* Adding Rubik font */
 
 @font-face {
   font-family: "Rubik";
   src: url("/fonts/Rubik.woff2") format("woff2");
 }
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --font-sans: "Rubik";
