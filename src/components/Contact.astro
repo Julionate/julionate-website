@@ -1,0 +1,11 @@
+---
+import Prose from "../layouts/Prose.astro"
+
+const {title="Contact me", summary="Hello"} = Astro.props
+---
+<section>
+    <Prose>
+        <h2>{title}</h2>
+        <span>{summary}</span>
+    </Prose>
+</section>

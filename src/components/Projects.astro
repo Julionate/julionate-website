@@ -1,0 +1,29 @@
+---
+import { getLangFromUrl } from "../i18n/utils"
+import { getCollection } from "astro:content"
+import Prose from "../layouts/Prose.astro"
+import Project from "./Cards/Project.astro"
+
+const {
+    title="My projects",
+    summary="These are my projects, take a look at them!",
+} = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+
+const projects = await getCollection("projects", ({id}) => {
+    return id.startsWith(`${lang}/`)
+})
+---
+
+<section>
+    <Prose>
+        <h2>{title}</h2>
+        <span>{summary}</span>
+    </Prose>
+    <div class="flex flex-wrap gap-12 justify-center md:justify-start py-6">
+        {projects.map(project => (
+            <Project title={project.data.title} description={project.data.description} image={project.data.image} altImage={project.data.altImage} url={project.data.url}/>
+        ))}
+    </div>
+</section>

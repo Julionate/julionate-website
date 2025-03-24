@@ -14,6 +14,7 @@
     "@preact/signals": "^2.0.1",
     "@tailwindcss/vite": "^4.0.14",
     "astro": "^5.5.2",
+    "dayjs": "^1.11.13",
     "preact": "^10.26.4",
     "tailwindcss": "^4.0.14",
     "tailwindcss-animated": "^2.0.0"

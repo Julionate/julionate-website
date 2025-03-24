@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets"
+import type { ImageMetadata } from "astro"
+
+const {title, description, image = "placeholder.webp", altImage = "Placeholder alt", url="https://github.com/Julionate/" } = Astro.props
+
+const imagePath = `/src/assets/projects/${image}`
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/projects/*.{jpeg,jpg,png,gif,webp}')
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/assets/projects/*.{jpeg, png, jpg, webp}"`);
+---
+
+<a target="_blank" href={url} class="w-60 h-68 bg-base-200 hover:bg-base-300 hover:-translate-y-2 transition-all duration-300 overflow-hidden text-wrap text-ellipsis shadow-sm shadow-base-content/10 hover:shadow-primary/25 hover:shadow-lg rounded-md cursor-pointer">
+    <Image src={images[imagePath]()} alt={altImage}/>
+    <div class="prose prose-headings:m-0 p-2">
+        <h4 class="mt-2">{title}</h4>
+        <p>{description}</p>
+    </div>
+</a>

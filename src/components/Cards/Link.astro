@@ -1,0 +1,9 @@
+---
+import LinkedIn from "../../assets/svg/linkedin.svg"
+const {Label = "Linkedin", Url = "https://www.linkedin.com/in/julio-andr%C3%A9s-o%C3%B1ate-lazo-186020357/", Svg = LinkedIn} = Astro.props
+---
+
+<a target="_blank" href={Url} class="flex py-2 items-center gap-2 hover:bg-base-content/5">
+    <Svg class="w-4 h-4 fill-base-content"/>
+    <span>{Label}</span>
+</a>

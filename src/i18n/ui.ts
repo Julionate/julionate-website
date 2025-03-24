@@ -31,7 +31,18 @@ export const themeSelector = {
   },
 } as const;
 
+const available = {
+  en: {
+    "available.on": "Online",
+    "available.off": "Offline",
+  },
+  es: {
+    "available.on": "Disponible",
+    "available.off": "No disponible",
+  },
+};
+
 export const translations = {
-  en: { ...navbar.en, ...themeSelector.en },
-  es: { ...navbar.es, ...themeSelector.es },
+  en: { ...navbar.en, ...themeSelector.en, ...available.en },
+  es: { ...navbar.es, ...themeSelector.es, ...available.es },
 } as const;

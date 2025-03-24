@@ -20,6 +20,9 @@ importers:
       astro:
         specifier: ^5.5.2
         version: 5.5.2(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
       preact:
         specifier: ^10.26.4
         version: 10.26.4
@@ -856,6 +859,9 @@ packages:
 
   daisyui@5.0.9:
     resolution: {integrity: sha512-RsaehHh45f+0shWgZZaOY09/8eOae2voRsqJCD71j9yrnYgcke0Nj5ys0ZxrW4SPcc4+q96kWyJu0Z8P1zZdoA==}
+
+  dayjs@1.11.13:
+    resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
 
   debug@4.4.0:
     resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
@@ -2663,6 +2669,8 @@ snapshots:
   cssesc@3.0.0: {}
 
   daisyui@5.0.9: {}
+
+  dayjs@1.11.13: {}
 
   debug@4.4.0:
     dependencies:

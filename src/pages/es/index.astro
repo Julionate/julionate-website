@@ -1,16 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Main from '../../layouts/Main.astro';
 import Hero from '../../components/Hero.astro'
 import Presentation from '../../components/Presentation.astro'
 import Projects from '../../components/Projects.astro'
 import Contact from '../../components/Contact.astro'
 import Footer from '../../components/Footer.astro'
+import ContentSide from '../../layouts/Contentside.astro';
 ---
 
 <Layout>
 	<Hero/>
-	<Presentation title="Hola!"/>
-	<Projects/>
-	<Contact>
-	<Footer/>
+	<Main>
+		<Presentation title="¡Hola, soy Julio!" description="Soy un desarrollador al que le gusta mucho trabajar y aprender algo nuevo cada día." mySocials="Mis redes"/>
+		<ContentSide>
+			<Projects/>
+			<Contact>
+			<Footer/>
+		</ContentSide>
+	</Main>
 </Layout>
