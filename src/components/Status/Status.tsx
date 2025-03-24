@@ -20,7 +20,7 @@ export const Status = ({ lang }: { lang: keyof typeof languages }) => {
   const currentLocalHour = dayjs.tz(undefined, dayjs.tz.guess()).hour();
 
   available.value =
-    currentLocalHour >= fromLocalHour && currentLocalHour <= toLocalHour
+    currentLocalHour >= fromLocalHour && currentLocalHour < toLocalHour
       ? true
       : false;
 
