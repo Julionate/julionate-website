@@ -42,11 +42,11 @@ export const ThemeToggleBtn = ({ lang }: { lang: keyof typeof languages }) => {
   };
 
   return (
-    <div className="dropdown dropdown-end absolute right-6">
+    <div className="dropdown dropdown-end">
       <div
         tabIndex={0}
         role="button"
-        class="btn btn-xs sm:btn-sm md:btn-md btn-block font-medium rounded-lg"
+        class="btn btn-xs sm:btn-sm md:btn-md btn-block btn-ghost font-medium rounded-lg"
       >
         {t(`theme.${currentTheme.value}`)}
         <svg

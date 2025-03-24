@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils"
+import { LanguageSelector } from "./Buttons/LanguageSelector"
 import { ThemeToggleBtn } from "./Buttons/ThemeToggleBtn"
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -12,5 +13,22 @@ const links = [{Label: t("nav.presentation"), Url: `#${t("nav.presentation")}`},
             <li><a href={Url} class="inline-block hover:text-transparent hover:-translate-y-0.5 transition-all">{Label}</a></li>
         )}
     </ul>
-    <ThemeToggleBtn client:only="Preact" lang={lang}/>
+    <div class="absolute right-6">
+        <LanguageSelector client:load lang={lang}/>
+        <ThemeToggleBtn client:only="Preact" lang={lang}>
+            <div class="dropdown dropdown-end" slot="fallback">
+                <div class="btn btn-xs sm:btn-sm md:btn-md btn-block btn-ghost font-medium rounded-lg">Theme
+                    <svg
+                    width="12px"
+                    height="12px"
+                    class="inline-block h-2 w-2 fill-current opacity-60"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 2048 2048"
+                    >
+                    <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+                  </svg>
+                </div>
+            </div>
+        </ThemeToggleBtn>
+    </div>
 </header>
