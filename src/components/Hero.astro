@@ -6,8 +6,8 @@ const t = useTranslations(lang)
 const links = [{Label: t("nav.presentation"), Url: `#${t("nav.presentation")}`}, {Label: t("nav.projects"), "Url": `#${t("nav.projects")}`}, {Label: t("nav.contact"), Url: `#${t("nav.contact")}`}]
 ---
 
-<header class="relative w-screen h-12 shadow-md flex justify-center items-center text-sm sm:text-base md:text-lg lg:text-xl shadow-base-200 px-6 gap-2 bg-base-100 z-10">
-    <ul class="font-normal hidden sm:flex *:not-last:after:content-['・'] justify-end sm:justify-center bg-gradient-to-l from-primary to-fuchsia-400 bg-clip-text">
+<header class="relative w-screen h-12 shadow-md flex justify-start items-center sm:justify-center text-sm sm:text-base md:text-lg lg:text-xl shadow-base-200 px-4 gap-2 bg-base-100 z-10">
+    <ul class="font-normal flex *:not-last:after:content-['・'] bg-gradient-to-l from-primary to-fuchsia-400 bg-clip-text">
         {links.map(({Label, Url}) => 
             <li><a href={Url} class="inline-block hover:text-transparent hover:-translate-y-0.5 transition-all">{Label}</a></li>
         )}

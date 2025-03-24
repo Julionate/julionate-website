@@ -1,12 +1,12 @@
 ---
-import { getLangFromUrl } from "../i18n/utils"
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
 import { getCollection } from "astro:content"
 import Prose from "../layouts/Prose.astro"
 import Project from "./Cards/Project.astro"
 
 interface Props{
-    title: string,
-    summary: string,
+    title?: string,
+    summary?: string,
 }
 
 const {
@@ -15,13 +15,14 @@ const {
 } = Astro.props
 
 const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 
 const projects = await getCollection("projects", ({id}) => {
     return id.startsWith(`${lang}/`)
 })
 ---
 
-<section class="animate-fade-right animate-delay-600">
+<section id={t("nav.projects")} class="animate-fade-right animate-delay-600">
     <Prose>
         <h2>{title}</h2>
         <span>{summary}</span>
