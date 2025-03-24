@@ -23,7 +23,7 @@ const {
     myKnowledges = "My knowledges"
 } = Astro.props
 ---
-<div class="flex flex-col flex-1 bg-base-200 overflow-x-hidden md:min-w-md">
+<div class="flex flex-col flex-1 bg-base-200 overflow-x-hidden md:min-w-md animate-fade-down">
     <Prose>
             <div class="bg-gradient-to-r from-primary to-fuchsia-500 bg-clip-text prose">
                 <h1 class="text-transparent">{title}</h1>
@@ -31,7 +31,7 @@ const {
             <p>{description}</p>
     </Prose>
     <div class="flex flex-col gap-6 my-6 items-center">
-        <Image src={avatar} alt="Julionate selfie" decoding="async" loading="lazy" class="object-scale-down shadow-xl hover:shadow-primary/25 rounded-4xl max-w-80 w-full self-center hover:-translate-y-1 hover:rotate-6 transition-all duration-400"></Image>
+        <Image src={avatar} alt="Julionate selfie" decoding="async" loading="lazy" class="object-scale-down shadow-xl shadow-base-content/10 hover:shadow-primary/25 rounded-4xl max-w-80 w-full self-center hover:-translate-y-1 hover:rotate-6 transition-all duration-400"></Image>
         <Status client:load lang={lang}/>
     </div>
     <Prose>

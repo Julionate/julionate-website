@@ -11,7 +11,7 @@ const newTag = "a href='mailto:julionate@pm.me'"
 const transformEmail =  summary.replace(/<email>/g, `<${newTag}>`).replace(/<\/email>/g, `</${newTag}>`);
 
 ---
-<section>
+<section class="animate-fade-left animate-delay-600">
     <Prose>
         <h2>{title}</h2>
         <span set:html={transformEmail}></span>

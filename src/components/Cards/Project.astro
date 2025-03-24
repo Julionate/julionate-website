@@ -10,8 +10,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/project
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/assets/projects/*.{jpeg, png, jpg, webp}"`);
 ---
 
-<a target="_blank" href={url} class="w-60 h-68 bg-base-200 hover:bg-base-300 hover:-translate-y-2 transition-all duration-300 overflow-hidden text-wrap text-ellipsis shadow-sm shadow-base-content/10 hover:shadow-primary/25 hover:shadow-lg rounded-md cursor-pointer">
-    <Image src={images[imagePath]()} alt={altImage}/>
+<a target="_blank" href={url} class="w-60 h-68 bg-base-200 hover:bg-base-300 hover:-translate-y-2 transition-all duration-300 overflow-hidden text-wrap text-ellipsis shadow-md border-base-content/5 border shadow-base-content/10 hover:shadow-primary/25 hover:shadow-lg rounded-md cursor-pointer">
+    <Image src={images[imagePath]()} alt={altImage} class="object-cover w-full h-1/2 bg-base-content/5"/>
     <div class="prose prose-headings:m-0 p-2">
         <h4 class="mt-2">{title}</h4>
         <p>{description}</p>
