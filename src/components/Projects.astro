@@ -4,6 +4,11 @@ import { getCollection } from "astro:content"
 import Prose from "../layouts/Prose.astro"
 import Project from "./Cards/Project.astro"
 
+interface Props{
+    title: string,
+    summary: string,
+}
+
 const {
     title="My projects",
     summary="These are my projects, take a look at them!",

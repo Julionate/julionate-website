@@ -36,7 +36,7 @@ export const Status = ({ lang }: { lang: keyof typeof languages }) => {
   }
 
   return (
-    <div class="w-max h-max bg-success/10 rounded-full px-2 py-1 flex items-center gap-2 select-none">
+    <div class="w-max h-max bg-success/10 rounded-full px-2 py-1 flex items-center gap-2 select-none shadow-lg">
       <div class="w-3 h-3 rounded-full bg-success" />
       <span class="text-success font-medium">{t("available.on")}</span>
     </div>

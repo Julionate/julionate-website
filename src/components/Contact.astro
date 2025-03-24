@@ -1,11 +1,19 @@
 ---
 import Prose from "../layouts/Prose.astro"
 
-const {title="Contact me", summary="Hello"} = Astro.props
+interface Props{
+    title: string,
+    summary: string
+}
+
+const {title="Contact me", summary="You can contact me through my <email>email (julionate@pm.me)</email>. I'll try to answer as soon as possible!"} = Astro.props
+const newTag = "a href='mailto:julionate@pm.me'"
+const transformEmail =  summary.replace(/<email>/g, `<${newTag}>`).replace(/<\/email>/g, `</${newTag}>`);
+
 ---
 <section>
     <Prose>
         <h2>{title}</h2>
-        <span>{summary}</span>
+        <span set:html={transformEmail}></span>
     </Prose>
 </section>
