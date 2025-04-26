@@ -1,7 +1,7 @@
-import { translations, defaultLang } from "./ui";
+import { translations, defaultLang } from './ui';
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split("/");
+  const [, lang] = url.pathname.split('/');
   if (lang in translations) return lang as keyof typeof translations;
   return defaultLang;
 }

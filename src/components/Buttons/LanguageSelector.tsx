@@ -1,4 +1,4 @@
-import { languages } from "../../i18n/ui";
+import { languages } from '../../i18n/ui';
 
 export const LanguageSelector = ({
   lang,

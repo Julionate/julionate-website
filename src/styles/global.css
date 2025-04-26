@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tailwindcss-animated";
+@import 'tailwindcss';
+@import 'tailwindcss-animated';
 @plugin "@tailwindcss/typography";
 
 /* Import DaisyUI and imports Light and Dark themes only */
@@ -9,7 +9,7 @@
 /* Customizing DaisyUI Themes */
 
 @plugin "daisyui/theme" {
-  name: "dark";
+  name: 'dark';
   colors-scheme: dark;
   prefersdark: true;
   --color-primary: hsl(338, 100%, 50%);
@@ -17,7 +17,7 @@
 }
 
 @plugin "daisyui/theme" {
-  name: "light";
+  name: 'light';
   default: true;
   colors-scheme: light;
   --color-primary: hsl(338, 100%, 50%);
@@ -27,10 +27,10 @@
 /* Adding Rubik font */
 
 @font-face {
-  font-family: "Rubik";
-  src: url("/fonts/Rubik.woff2") format("woff2");
+  font-family: 'Rubik';
+  src: url('/fonts/Rubik.woff2') format('woff2');
 }
 
 @theme {
-  --font-sans: "Rubik";
+  --font-sans: 'Rubik';
 }
