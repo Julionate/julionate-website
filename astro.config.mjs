@@ -19,7 +19,4 @@ export default defineConfig({
       redirectToDefaultLocale: true,
     },
   },
-  experimental: {
-    svg: true,
-  },
 });
