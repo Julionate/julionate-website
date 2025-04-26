@@ -1,18 +1,18 @@
-import { useSignal, useSignalEffect } from "@preact/signals";
-import { languages } from "../../i18n/ui";
-import { useTranslations } from "../../i18n/utils";
+import { useSignal, useSignalEffect } from '@preact/signals';
+import { languages } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/utils';
 
 export const ThemeToggleBtn = ({ lang }: { lang: keyof typeof languages }) => {
   const t = useTranslations(lang);
 
   enum Themes {
-    system = "system",
-    light = "light",
-    dark = "dark",
+    system = 'system',
+    light = 'light',
+    dark = 'dark',
   }
 
   const currentTheme = useSignal(
-    localStorage.getItem("theme") ?? Themes.system
+    localStorage.getItem('theme') ?? Themes.system,
   );
 
   if (!Object.values(Themes).includes(currentTheme.value as Themes)) {
@@ -21,13 +21,13 @@ export const ThemeToggleBtn = ({ lang }: { lang: keyof typeof languages }) => {
 
   useSignalEffect(() => {
     if (currentTheme.value === Themes.system) {
-      localStorage.removeItem("theme");
-      document.documentElement.removeAttribute("data-theme");
+      localStorage.removeItem('theme');
+      document.documentElement.removeAttribute('data-theme');
       return;
     }
 
-    localStorage.setItem("theme", currentTheme.value);
-    document.documentElement.setAttribute("data-theme", currentTheme.value);
+    localStorage.setItem('theme', currentTheme.value);
+    document.documentElement.setAttribute('data-theme', currentTheme.value);
   });
 
   const setLight = () => {
@@ -69,7 +69,7 @@ export const ThemeToggleBtn = ({ lang }: { lang: keyof typeof languages }) => {
             type="radio"
             name="theme-dropdown"
             className="theme-controller btn btn-block btn-ghost justify-start"
-            aria-label={t("theme.light")}
+            aria-label={t('theme.light')}
             value="default"
           />
         </li>
@@ -79,7 +79,7 @@ export const ThemeToggleBtn = ({ lang }: { lang: keyof typeof languages }) => {
             type="radio"
             name="theme-dropdown"
             className="theme-controller btn btn-block btn-ghost justify-start"
-            aria-label={t("theme.dark")}
+            aria-label={t('theme.dark')}
             value="dark"
           />
         </li>
@@ -89,7 +89,7 @@ export const ThemeToggleBtn = ({ lang }: { lang: keyof typeof languages }) => {
             type="radio"
             name="theme-dropdown"
             className="theme-controller btn btn-block btn-ghost justify-start"
-            aria-label={t("theme.system")}
+            aria-label={t('theme.system')}
             value="system"
           />
         </li>
