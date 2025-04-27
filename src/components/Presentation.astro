@@ -1,57 +1,68 @@
 ---
-import { Status } from "../components/Status/Status"
-import { getLangFromUrl, useTranslations } from "../i18n/utils"
-import { Image } from "astro:assets"
-import Prose from "../layouts/Prose.astro"
-import avatar from "../assets/avatar.jpg"
-import Link from "./Cards/Link.astro"
-import Github from "../assets/svg/github.svg"
+import { Status } from '../components/Status/Status';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { Image } from 'astro:assets';
+import Prose from '../layouts/Prose.astro';
+import avatar from '../assets/avatar.jpg';
+import Link from './Cards/Link.astro';
+import Github from '../assets/svg/github.svg';
 
-interface Props{
-    title?: string,
-    description?: string,
-    mySocials?: string,
-    myKnowledges?: string
+interface Props {
+  title?: string;
+  description?: string;
+  mySocials?: string;
+  myKnowledges?: string;
 }
 
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const {
-    title = "Hi, I'm Julio!",
-    description = "I'm a fullstack developer who likes to work hard and learn something new every day.",
-    mySocials = "My socials",
-    myKnowledges = "My knowledges"
-} = Astro.props
+  title = "Hi, I'm Julio!",
+  description = "I'm a fullstack developer who likes to work hard and learn something new every day.",
+  mySocials = 'My socials',
+  myKnowledges = 'My knowledges',
+} = Astro.props;
 ---
-<div id={t("nav.presentation")} class="flex flex-col flex-1 bg-base-200 overflow-x-hidden md:min-w-md animate-fade-down">
-    <Prose>
-            <div class="bg-gradient-to-r from-primary to-fuchsia-500 bg-clip-text prose">
-                <h1 class="text-transparent">{title}</h1>
-            </div>
-            <p>{description}</p>
-    </Prose>
-    <div class="flex flex-col gap-6 my-6 items-center">
-        <Image src={avatar} alt="Julionate selfie" decoding="async" loading="lazy" class="object-scale-down shadow-xl shadow-base-content/10 hover:shadow-primary/25 rounded-4xl max-w-80 w-full self-center hover:-translate-y-1 hover:rotate-6 transition-all duration-400"></Image>
-        <Status client:load lang={lang}/>
+
+<div
+  id={t('nav.presentation')}
+  class="flex flex-col flex-1 bg-base-200 overflow-x-hidden md:min-w-md animate-fade-down"
+>
+  <Prose>
+    <div
+      class="bg-gradient-to-r from-primary to-fuchsia-500 bg-clip-text prose"
+    >
+      <h1 class="text-transparent">{title}</h1>
     </div>
-    <Prose>
-        <h4>{mySocials}</h4>
-        <div class="divide-accent-content/10 divide-y-2 flex flex-col mb-6">
-            <Link/>
-            <Link Url="https://github.com/Julionate" Label="GitHub" Svg={Github}/>
-        </div>
-        <h4>{myKnowledges}</h4>
-        <ul>
-            <li>JavaScript & Typescript</li>
-            <li>Python</li>
-            <li>Astro</li>
-            <li>React & Preact</li>
-            <li>TailwindCSS</li>
-            <li>Express</li>
-            <li>Tauri</li>
-            <li>React Native</li>
-            <li>Expo</li>
-        </ul>
-    </Prose>
+    <p>{description}</p>
+  </Prose>
+  <div class="flex flex-col gap-6 my-6 items-center">
+    <Image
+      src={avatar}
+      alt="Julionate selfie"
+      decoding="async"
+      class="object-scale-down shadow-xl shadow-base-content/10 hover:shadow-primary/25 rounded-4xl max-w-80 w-full self-center hover:-translate-y-1 hover:rotate-6 transition-all duration-400"
+    />
+    <Status client:load lang={lang} />
+  </div>
+  <Prose>
+    <h4>{mySocials}</h4>
+    <div class="divide-accent-content/10 divide-y-2 flex flex-col mb-6">
+      <Link />
+      <Link Url="https://github.com/Julionate" Label="GitHub" Svg={Github} />
+    </div>
+    <h4>{myKnowledges}</h4>
+    <ul>
+      <li>JavaScript & Typescript</li>
+      <li>Python</li>
+      <li>Astro</li>
+      <li>React & Preact</li>
+      <li>TailwindCSS</li>
+      <li>Express</li>
+      <li>Tauri</li>
+      <li>React Native</li>
+      <li>Expo</li>
+    </ul>
+  </Prose>
 </div>
