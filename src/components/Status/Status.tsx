@@ -26,11 +26,13 @@ export const Status = ({ lang }: { lang: keyof typeof languages }) => {
 
   if (!available.value) {
     return (
-      <div class="w-max h-max bg-red-500/10 rounded-full px-2 py-1 flex items-center gap-2">
-        <div class="w-3 h-3 rounded-full bg-red-400" />
-        <span class="text-red-900 dark:text-red-600 font-medium">
-          {t('available.off')}
-        </span>
+      <div class="tooltip tooltip-bottom" data-tip={t('available.message')}>
+        <div class="w-max h-max bg-red-500/10 rounded-full px-2 py-1 flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-red-400" />
+          <span class="text-red-900 dark:text-red-600 font-medium">
+            {t('available.off')}
+          </span>
+        </div>
       </div>
     );
   }
