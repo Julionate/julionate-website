@@ -26,10 +26,10 @@ export const Status = ({ lang }: { lang: keyof typeof languages }) => {
 
   if (!available.value) {
     return (
-      <div class="tooltip tooltip-bottom" data-tip={t('available.message')}>
-        <div class="w-max h-max bg-red-500/10 rounded-full px-2 py-1 flex items-center gap-2">
+      <div class="tooltip tooltip-bottom" data-tip={t('available.message.off')}>
+        <div class="w-max h-max bg-red-500/10 rounded-full px-2 py-1 flex items-center gap-2 cursor-pointer">
           <div class="w-3 h-3 rounded-full bg-red-400" />
-          <span class="text-red-900 dark:text-red-600 font-medium">
+          <span class="text-red-900 dark:text-red-600 font-medium select-none">
             {t('available.off')}
           </span>
         </div>
@@ -38,9 +38,11 @@ export const Status = ({ lang }: { lang: keyof typeof languages }) => {
   }
 
   return (
-    <div class="w-max h-max bg-success/10 rounded-full px-2 py-1 flex items-center gap-2 select-none shadow-lg">
-      <div class="w-3 h-3 rounded-full bg-success" />
-      <span class="text-success font-medium">{t('available.on')}</span>
+    <div class="tooltip tooltip-bottom" data-tip={t('available.message.on')}>
+      <div class="w-max h-max bg-success/10 rounded-full px-2 py-1 flex items-center gap-2 select-none shadow-lg cursor-pointer">
+        <div class="w-3 h-3 rounded-full bg-success" />
+        <span class="text-success font-medium select-none">{t('available.on')}</span>
+      </div>
     </div>
   );
 };

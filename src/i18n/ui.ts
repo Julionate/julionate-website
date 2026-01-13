@@ -33,12 +33,14 @@ export const themeSelector = {
 
 const available = {
   en: {
-    'available.message': "I'm active right now, contact me!",
+    'available.message.on': "I'm active right now, contact me!",
+    'available.message.off': "I'm not active right now... but contact me anyways!",
     'available.on': 'Online',
     'available.off': 'Offline',
   },
   es: {
-    'available.message': '¡Estoy activo ahora mismo, contáctame!',
+    'available.message.on': '¡Estoy activo ahora mismo, contáctame!',
+    'available.message.off': 'No estoy activo ahora mismo... pero contáctame de todas formas!',
     'available.on': 'Disponible',
     'available.off': 'No disponible',
   },
